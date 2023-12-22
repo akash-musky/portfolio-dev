@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /*
+Host: portfolio-dev-akash-musky.vercel.app
