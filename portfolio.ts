@@ -168,7 +168,7 @@ export const projects: ProjectType[] = [
     name: "portfolio-dev",
     desc: "Software Developer Portfolio  built with react.js and next.js bootstrap that helps you showcase your work and skills as a software developer.",
     github: "https://github.com/akash-musky/portfolio-dev",
-    link: "https://portfolio-dev-akash-musky.vercel.app/",
+    link: "https://6585ffabe78d1912abc17fcd--jocular-biscotti-c76634.netlify.app/",
   }
 ]
 
@@ -180,7 +180,7 @@ export const seoData: SEODataType = {
   description: greetings.description,
   author: "Akash Kumar",
   image: "https://avatars.githubusercontent.com/u/59178380?v=4",
-  url: "https://portfolio-dev-akash-musky.vercel.app",
+  url: "https://6585ffabe78d1912abc17fcd--jocular-biscotti-c76634.netlify.app/",
   keywords: [
     "Akash",
     "Akash Kumar",
@@ -189,5 +189,5 @@ export const seoData: SEODataType = {
     "Portfolio",
     "Akash Portfolio ",
     "Akash Kumar Portfolio",
-  ],
+  ]
 }
