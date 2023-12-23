@@ -50,10 +50,6 @@ export const skillsSection: SkillsSectionType = {
           iconifyTag: "logos:javascript",
         },
         {
-          skillName: "NodeJs",
-          iconifyTag: "logos:javascript",
-        },
-        {
           skillName: "Reactjs",
           iconifyTag: "vscode-icons:file-type-reactjs",
         },
@@ -84,17 +80,73 @@ export const skillsSection: SkillsSectionType = {
 
 export const SkillBars: SkillBarsType[] = [
   {
-    Stack: "Node.Js/Backend Development",
+    Stack: "C/C++",
     progressPercentage: "90",
   },
   {
-    Stack: "Programming",
+    Stack: "Node.Js",
     progressPercentage: "90",
   },
   {
-    Stack: "Machine Learning", //Insert stack or technology you have experience in
+    Stack: "MongoDb",
+    progressPercentage: "90",
+  },
+  {
+    Stack: "MicroServices",
+    progressPercentage: "80",
+  },
+  {
+    Stack: "Debugging",
+    progressPercentage: "90",
+  },
+  {
+    Stack: "Travis/Jenkins CI/CD Pipeline",
+    progressPercentage: "80",
+  },
+  {
+    Stack: "Kafka",
+    progressPercentage: "80",
+  },
+  {
+    Stack: "Postman",
+    progressPercentage: "90",
+  },
+  {
+    Stack: "Docker", //Insert stack or technology you have experience in
     progressPercentage: "70", //Insert relative proficiency in percentage
-  }
+  },
+  {
+    Stack: "Redis",
+    progressPercentage: "60",
+  },
+  {
+    Stack: "Backend Development",
+    progressPercentage: "90",
+  },
+  {
+    Stack: "Frontend Development",
+    progressPercentage: "70",
+  },
+  {
+    Stack: "Machine Learning",
+    progressPercentage: "75",
+  },
+  {
+    Stack: "Python",
+    progressPercentage: "80",
+  },
+  {
+    Stack: "Java",
+    progressPercentage: "60",
+  },
+  {
+    Stack: "Snowflake",
+    progressPercentage: "80",
+  },
+  {
+    Stack: "MySql",
+    progressPercentage: "80",
+  },
 ]
 
 export const educationInfo: EducationType[] = [
@@ -103,7 +155,7 @@ export const educationInfo: EducationType[] = [
     subHeader: "Bachelor of Science in Computer Science",
     duration: "Aug 2019 - May 2023",
     desc: "",
-    CGPA: "7.51",
+    grade: "7.51",
     descBullets: [], // Array of Strings
   },
   {
@@ -111,7 +163,7 @@ export const educationInfo: EducationType[] = [
     subHeader: "I.Sc",
     duration: "Aug 2017 - May 2019",
     desc: "",
-    percentage: "85",
+    grade: "85%",
     descBullets: [], // Array of Strings
   },
   {
@@ -119,7 +171,7 @@ export const educationInfo: EducationType[] = [
     subHeader: "Matriculation",
     duration: "Aug 2016 - May 2017",
     desc: "",
-    percentage: "90",
+    grade: "90%",
     descBullets: [], // Array of Strings
   },
 ]
@@ -135,14 +187,14 @@ export const experience: ExperienceType[] = [
   {
     role: "Software Development Engineer Intern",
     company: "Optum UHG",
-    companyLogo: "/img/icons/common/optum.jpg",
+    companyLogo: "/img/icons/common/optumlog.png",
     date: "June 2022 - Aug 2022",
     desc: "Led the development of the Post-Acute Care questionnaire form, a pioneering project focused on leveraging daily human activity recognition. The form utilizes sensor data from IoT devices, including accelerometers, gyroscopes, magnetometers, etc., to automatically complete relevant questions. Implemented a cutting-edge simulator, OpenSim, for visualizing human activity. Employed diverse machine learning and deep learning techniques, notably Convolutional Neural Networks (CNNs), to enhance the accuracy and efficiency of activity recognition. This groundbreaking initiative represents a fusion of sensor technology, machine learning, and healthcare, providing valuable insights into post-acute care monitoring.",
   },
   {
     role: "Competitive Prgoramming",
     company: "Codeforces",
-    companyLogo: "/img/icons/common/cp.png",
+    companyLogo: "/img/icons/common/programming.png",
     date: "Aug 2020 - Aug 2023",
     desc: "I have been participating in more than 150+ coding contest on different platform like codechef, leetcode, codeforces and geeksofgeeks to increase my problem solving skills.",
   }
@@ -168,7 +220,7 @@ export const projects: ProjectType[] = [
     name: "portfolio-dev",
     desc: "Software Developer Portfolio  built with react.js and next.js bootstrap that helps you showcase your work and skills as a software developer.",
     github: "https://github.com/akash-musky/portfolio-dev",
-    link: "https://6585ffabe78d1912abc17fcd--jocular-biscotti-c76634.netlify.app/",
+    link: "https://portfolio-dev-akash.netlify.app/",
   }
 ]
 
@@ -179,8 +231,8 @@ export const seoData: SEODataType = {
   title: "Akash Kumar",
   description: greetings.description,
   author: "Akash Kumar",
-  image: "https://avatars.githubusercontent.com/u/59178380?v=4",
-  url: "https://6585ffabe78d1912abc17fcd--jocular-biscotti-c76634.netlify.app/",
+  image: "https://avatars.githubusercontent.com/u/70103770?v=4",
+  url: "https://portfolio-dev-akash.netlify.app/",
   keywords: [
     "Akash",
     "Akash Kumar",
