@@ -20,7 +20,7 @@ If you created something awesome and want to contribute then feel free to open a
 ✔️ Skills\
 ✔️ Education\
 ✔️ Work Experience\
-✔️ Feedbacks\
+<!-- ✔️ Feedbacks\ -->
 ✔️ Projects\
 ✔️ Github Profile
 
@@ -71,7 +71,7 @@ $ yarn dev
 
 ```javascript
   //  portfolio.js
-  githubUserName: 'YOUR GITHUB USERNAME HERE',
+  githubUserName: 'akash-musky',
 ```
 
 #### Using Emojis
@@ -100,6 +100,8 @@ Iconify Icons are used in skill section. You can find all the icons here: [Iconi
 
 ## For the Future
 
+ curl https://api.github.com/users/username  : use this command to fetch profile Json
+
 If you can help us with these. Please don't hesitate to open a
 [pull request](https://github.com/akash-musky/portfolio-dev/pulls).
 
@@ -111,10 +113,7 @@ If you can help us with these. Please don't hesitate to open a
 
 👤 **Akash Kumar**
 
-- Website: https://Akash.netlify.app
+- Website: https://portfolio-dev-akash.netlify.app/
 - Github: [@akash-musky](https://github.com/akash-musky)
 - LinkedIn: [@akash-kumar-2a61191a6](https://linkedin.com/in/akash-kumar-2a61191a6)
 
-## Show your support
-
-Give a ⭐️ if this project helped you!
