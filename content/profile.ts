@@ -2,7 +2,7 @@
 // Personal project links are retained from the original portfolio.
 export const profile = {
   name: "Akash Kumar",
-  url: "https://portfolio-dev-akash.netlify.app/",
+  url: "https://akashkumar-engineer.netlify.app/",
   description:
     "Akash Kumar is a senior software engineer at Fleetx, building reliable APIs, enterprise integrations, and practical AI with Java, Spring Boot, Node.js, and Amazon Bedrock.",
 };

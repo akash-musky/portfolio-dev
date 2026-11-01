@@ -206,7 +206,7 @@ export const projects: ProjectType[] = [
     name: "portfolio-dev",
     desc: "Software Developer Portfolio  built with react.js and next.js bootstrap that helps you showcase your work and skills as a software developer.",
     github: "https://github.com/akash-musky/portfolio-dev",
-    link: "https://portfolio-dev-akash.netlify.app/",
+    link: "https://akashkumar-engineer.netlify.app/",
   }
 ]
 
@@ -218,7 +218,7 @@ export const seoData: SEODataType = {
   description: greetings.description,
   author: "Akash Kumar",
   image: "https://avatars.githubusercontent.com/u/70103770?v=4",
-  url: "https://portfolio-dev-akash.netlify.app/",
+  url: "https://akashkumar-engineer.netlify.app/",
   keywords: [
     "Akash",
     "Akash Kumar",

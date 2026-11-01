@@ -34,7 +34,8 @@ libraries. The original standalone deployment configuration is retained.
 - `components/SEO.tsx`: metadata and Person structured data.
 - `public/social-preview.svg` and `public/social-preview.png`: editable source and rendered social sharing image.
 
-Set `profile.url` to the production domain if hosting changes. It controls canonical and social sharing URLs.
+Set `profile.url` to the production domain if hosting changes. It controls canonical and social sharing URLs. Update
+`public/sitemap.xml` and the sitemap address in `public/robots.txt` to match.
 
 Personal contact details, profile links, education details, and downloadable résumés are intentionally excluded from the
 public site.
@@ -54,3 +55,18 @@ public site.
 
 Legacy template components and `portfolio.ts` remain for reference. The active homepage uses `content/profile.ts`; it
 does not render the old template containers or load Bootstrap/Argon styles.
+
+## Google Search indexing
+
+The production address is `https://akashkumar-engineer.netlify.app/`. The sitemap contains the homepage only; section
+anchors are not separate pages.
+
+1. Deploy the current code to Netlify. Confirm that the homepage, `/robots.txt`, and `/sitemap.xml` load at the
+   production address.
+2. Add the full HTTPS address as a **URL-prefix** property in Google Search Console.
+3. Verify ownership using Google's HTML tag or verification file, and retain the verification after deployment.
+4. Submit `sitemap.xml` in Search Console's **Sitemaps** panel.
+5. Inspect the homepage with **URL Inspection**, use **Test live URL**, then **Request indexing**.
+
+These files make the site discoverable; they do not submit it to Search Console or guarantee indexing. Google may take
+days to weeks to crawl the site.
