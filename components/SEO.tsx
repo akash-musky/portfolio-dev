@@ -1,48 +1,43 @@
-import React from "react";
 import Head from "next/head";
-import { seoData } from "../portfolio";
+import { profile } from "../content/profile";
 
-function SEO() {
+export default function SEO() {
+  const title = "Akash Kumar — Senior Software Engineer";
   return (
     <Head>
-      <title>{seoData.title}</title>
-      <meta name="title" content={seoData.title} />
-      <meta name="author" content={seoData.author} />
-      <meta name="description" content={seoData.description} />
-      <meta name="keywords" content={seoData.keywords.join(", ")} />
-      <link rel="canonical" href={seoData.url} />
-      {/* Open Graph / Facebook */}
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content={seoData.url} />
-      <meta property="og:title" content={seoData.title} />
-      <meta property="og:description" content={seoData.description} />
-      <meta property="og:image" content={seoData.image} />
-      <meta property="og:site_name" content={seoData.title} />
-      {/* Twitter */}
-      <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content={seoData.url} />
-      <meta property="twitter:title" content={seoData.title} />
-      <meta property="twitter:description" content={seoData.description} />
-      <meta property="twitter:image" content={seoData.image} />
-      <meta name="robots" content="Index" />
+      <title>{title}</title>
+      <meta name="description" content={profile.description} />
+      <meta name="author" content={profile.name} />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name="theme-color" content="#f7f7f2" />
+      <link rel="canonical" href={profile.url} />
       <link rel="manifest" href="/manifest.json" />
-      {/* Favicon */}
-      <link rel="apple-touch-icon" sizes="120x120" href="./favicon.png" />
-      <link rel="icon" type="image/png" sizes="32x32" href="./favicon.png" />
-      <link rel="icon" type="image/png" sizes="16x16" href="./favicon.png" />
+      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={profile.description} />
+      <meta property="og:url" content={profile.url} />
+      <meta property="og:image" content={`${profile.url}social-preview.png`} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content="Akash Kumar — Senior software engineer, backend systems, and applied AI" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={profile.description} />
+      <meta name="twitter:image" content={`${profile.url}social-preview.png`} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: profile.name,
+            url: profile.url,
+            jobTitle: "Senior Software Engineer",
+            worksFor: { "@type": "Organization", name: "Fleetx" },
+          }),
+        }}
+      />
     </Head>
   );
 }
-
-// SEO.prototype = {
-//   data: PropTypes.shape({
-//     title: PropTypes.string.isRequired,
-//     author: PropTypes.string,
-//     description: PropTypes.string,
-//     image: PropTypes.string,
-//     url: PropTypes.string,
-//     keywords: PropTypes.arrayOf(PropTypes.string),
-//   }).isRequired,
-// };
-
-export default SEO;

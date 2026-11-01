@@ -14,8 +14,7 @@ import {
 export const greetings: GreetingsType = {
   name: "Akash Kumar",
   title: "Hi all, I'm Akash Kumar",
-  description: "I am a seasoned Software Engineer 2 at Celigo, specializing in advancing integration platform as a service (iPaaS) and software as a service (SaaS) solutions. My expertise lies in ensuring seamless data flow and automation across diverse applications and systems, leveraging technologies like Node.js, JavaScript, MongoDB, Docker, and various cloud services. I excel in crafting scalable and reliable backend architectures, optimizing file services, and enhancing WebSocket communication. My background includes valuable experience gained from internships at Celigo and Optum, where I applied machine learning and deep learning techniques to analyze sensor data for human activity recognition. With a solid foundation in C, C++, and data structures/algorithms from my Bachelor's degree in Computer Science, acquired at the National Institute of Technology Delhi, I am dedicated to advancing the software engineering field. I am passionate about continuous learning, collaboration, accountability, and delivering high-impact results.",
-  resumeLink: "https://drive.google.com/file/d/1pV1nILGrOl7_urq6X-2OoIFJlhm_MXgj/view?usp=drive_link",
+  description: "I am a seasoned Software Engineer 2 at Celigo, specializing in advancing integration platform as a service (iPaaS) and software as a service (SaaS) solutions. My expertise lies in ensuring seamless data flow and automation across diverse applications and systems, leveraging technologies like Node.js, JavaScript, MongoDB, Docker, and various cloud services. I excel in crafting scalable and reliable backend architectures, optimizing file services, and enhancing WebSocket communication. My background includes valuable experience gained from internships at Celigo and Optum, where I applied machine learning and deep learning techniques to analyze sensor data for human activity recognition. I am passionate about continuous learning, collaboration, accountability, and delivering high-impact results.",
 }
 
 export const openSource = {
@@ -24,12 +23,7 @@ export const openSource = {
 
 export const contact = {}
 
-export const socialLinks: SocialLinksType = {
-  email: "mailto:professionalakash123@gmail.com",
-  linkedin: "https://www.linkedin.com/in/akash-kumar-2a61191a6/",
-  github: "https://github.com/akash-musky",
-  instagram: "https://www.instagram.com/akash_1907_kumar/"
-}
+export const socialLinks: SocialLinksType = {}
 
 export const skillsSection: SkillsSectionType = {
   title: "What I do",
@@ -150,14 +144,6 @@ export const SkillBars: SkillBarsType[] = [
 ]
 
 export const educationInfo: EducationType[] = [
-  {
-    schoolName: "National Institute Of Technology, Delhi",
-    subHeader: "Bachelor of Science in Computer Science",
-    duration: "Aug 2019 - May 2023",
-    desc: "",
-    grade: "7.51",
-    descBullets: [], // Array of Strings
-  },
   {
     schoolName: "Ram Lakhan Sigh Yadav College, Bakhtiyarpur Patna Bihar-803212",
     subHeader: "I.Sc",

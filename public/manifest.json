@@ -1,21 +1,10 @@
 {
-  "short_name": "Portfolio",
-  "name": "Akash's Portfolio",
-  "description": "A passionate Full Stack Web Developer and Mobile App Developer.",
-  "icons": [
-    {
-      "src": "./favicon.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "./favicon.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    }
-  ],
-  "start_url": "./index.html",
+  "short_name": "Akash",
+  "name": "Akash Kumar — Senior Software Engineer",
+  "description": "Backend engineering, enterprise integrations, and applied AI.",
+  "icons": [{ "src": "/favicon.svg", "type": "image/svg+xml", "sizes": "any", "purpose": "any" }],
+  "start_url": "/",
   "display": "standalone",
-  "theme_color": "#11cdef",
-  "background_color": "#11cdef"
+  "theme_color": "#f7f7f2",
+  "background_color": "#f7f7f2"
 }
