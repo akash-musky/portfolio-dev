@@ -1,7 +1,8 @@
 # Akash Kumar — Portfolio
 
 A responsive backend engineering portfolio built with Next.js, React, and TypeScript. Career content reflects the
-supplied résumé, including Fleetx, Celigo, Optum, and the SmartForms hackathon win.
+supplied résumé and subsequent title and metric corrections, including Fleetx, Celigo, Optum, and the SmartForms
+hackathon win.
 
 ## Run locally
 
@@ -28,20 +29,25 @@ libraries. The original standalone deployment configuration is retained.
 
 - `content/profile.ts`: site metadata, work stories, career history, personal projects, and skills.
 - `components/Portfolio.tsx`: page layout, architecture illustration, workflow illustrations, and interactions.
-- `styles/portfolio.css`: theme tokens, responsive layouts, print styles, and reduced-motion support.
+- `styles/portfolio.css`: theme tokens, locally hosted fonts, responsive layouts, print styles, and reduced-motion
+  support.
 - `components/SEO.tsx`: metadata and Person structured data.
 - `public/social-preview.svg` and `public/social-preview.png`: editable source and rendered social sharing image.
 
 Set `profile.url` to the production domain if hosting changes. It controls canonical and social sharing URLs.
 
-Personal contact details, profile links, and downloadable résumés are intentionally excluded from the public site.
+Personal contact details, profile links, education details, and downloadable résumés are intentionally excluded from the
+public site.
 
 ## Features
 
-- Persistent light/dark theme with a pre-render theme initializer.
+- Dark graphite and lime visual identity. Every fresh page load starts in dark mode; visitors can switch to light mode
+  for the current visit.
+- Interactive systems diagram with backend, integration, and applied-AI modes.
+- Locally bundled Space Grotesk and DM Sans variable fonts; licenses are included in `public/fonts/`.
 - Mobile navigation, section links, keyboard controls, and skip link.
-- Four expandable professional case studies covering SmartForms, document signing, API performance, and financial APIs,
-  with ownership and outcomes visible up front.
+- Expandable company experience entries and four professional case studies covering SmartForms, document signing, API
+  performance, and financial APIs, with ownership and outcomes visible up front.
 - Custom CSS/SVG visuals; workflow concepts are labeled rather than presented as product screenshots.
 - Fluid 16–18px body typography, responsive layouts, subtle section animations, reduced-motion support, and print
   styling.

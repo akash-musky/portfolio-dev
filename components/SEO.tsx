@@ -9,7 +9,7 @@ export default function SEO() {
       <meta name="description" content={profile.description} />
       <meta name="author" content={profile.name} />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <meta name="theme-color" content="#f7f7f2" />
+      <meta name="theme-color" content="#0c0f14" />
       <link rel="canonical" href={profile.url} />
       <link rel="manifest" href="/manifest.json" />
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />

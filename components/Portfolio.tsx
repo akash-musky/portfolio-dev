@@ -32,63 +32,100 @@ function Icon({ name, size = 20 }: { name: "arrow" | "sun" | "moon" | "menu" | "
   );
 }
 
+const systemModes = [
+  {
+    name: "Backend",
+    label: "ENGINEER THE FOUNDATION",
+    symbol: "{ }",
+    nodes: ["Java", "Spring Boot", "MySQL", "Redis"],
+    description: "Reliable APIs. Thoughtful data models. Performance where it matters.",
+  },
+  {
+    name: "Integrations",
+    label: "CONNECT THE MOVING PARTS",
+    symbol: "↔",
+    nodes: ["Kafka", "WebSocket", "Zoho APIs", "Node.js"],
+    description: "Connecting services, moving real-time data, and automating the handoffs.",
+  },
+  {
+    name: "Applied AI",
+    label: "TURN INTELLIGENCE INTO UTILITY",
+    symbol: "✳",
+    nodes: ["Bedrock", "LLMs", "Vector DB", "Java 23"],
+    description: "Bringing natural-language input into useful, everyday product workflows.",
+  },
+];
+
 function SystemDiagram() {
+  const [mode, setMode] = useState(0);
+  const active = systemModes[mode];
   return (
-    <div
-      className="system-card"
-      role="img"
-      aria-label="Illustration of a backend architecture connecting APIs, services, data, and intelligence"
-    >
-      <div className="system-topline">
+    <div className="system-lab">
+      <div className="lab-topline">
         <span>
-          <i className="status-dot" /> THE ENGINEERING MINDSET
+          <i className="status-dot" /> SYSTEMS THINKING
         </span>
-        <span>AK / 01</span>
+        <span>AK—001</span>
       </div>
-      <div className="system-canvas">
-        <div className="orbit orbit-one" />
-        <div className="orbit orbit-two" />
-        <svg className="system-lines" viewBox="0 0 500 350" aria-hidden="true">
-          <path d="M90 85H250V175M410 85H250M90 265H250V175M410 265H250" />
-          <circle r="4">
-            <animateMotion dur="5s" repeatCount="indefinite" path="M90 85H250V175H250V265H410" />
-          </circle>
-          <circle r="4">
-            <animateMotion dur="5s" begin="-2.5s" repeatCount="indefinite" path="M410 85H250V175H250V265H90" />
-          </circle>
+      <div className="lab-scene" aria-hidden="true">
+        <div className="scene-grid" />
+        <svg className="orbital-map" viewBox="0 0 500 440" fill="none">
+          <defs>
+            <radialGradient id="sphere-glow">
+              <stop stopColor="#b8fa5b" stopOpacity=".12" />
+              <stop offset="1" stopColor="#b8fa5b" stopOpacity="0" />
+            </radialGradient>
+          </defs>
+          <circle cx="250" cy="220" r="190" fill="url(#sphere-glow)" />
+          <g className="sphere-grid" stroke="currentColor">
+            <circle cx="250" cy="220" r="155" />
+            <ellipse cx="250" cy="220" rx="105" ry="155" />
+            <ellipse cx="250" cy="220" rx="45" ry="155" />
+            <ellipse cx="250" cy="220" rx="155" ry="45" />
+            <ellipse cx="250" cy="220" rx="155" ry="105" />
+            <path d="M95 220h310M250 65v310" />
+          </g>
+          <ellipse className="orbit-path" cx="250" cy="220" rx="224" ry="95" transform="rotate(-30 250 220)" />
+          <ellipse
+            className="orbit-path orbit-secondary"
+            cx="250"
+            cy="220"
+            rx="210"
+            ry="105"
+            transform="rotate(35 250 220)"
+          />
+          <g className="orbit-marker">
+            <circle cx="65" cy="325" r="6" />
+            <circle cx="434" cy="114" r="4" />
+            <circle cx="415" cy="333" r="4" />
+          </g>
         </svg>
-        <div className="system-node node-api">
-          <span className="node-symbol">↔</span>
-          <strong>APIs</strong>
-          <small>Connect seamlessly</small>
+        <div className="processor-stack">
+          <div className="processor-layer layer-bottom" />
+          <div className="processor-layer layer-middle" />
+          <div className="processor-core">
+            <span key={active.symbol}>{active.symbol}</span>
+            <small>AK / ENGINEERING</small>
+          </div>
         </div>
-        <div className="system-node node-data">
-          <span className="node-symbol">▤</span>
-          <strong>Data</strong>
-          <small>Move with purpose</small>
-        </div>
-        <div className="system-core">
-          <span>
-            ak<span className="orange">.</span>
-          </span>
-          <small>ENGINEERED TO WORK</small>
-        </div>
-        <div className="system-node node-services">
-          <span className="node-symbol">⌘</span>
-          <strong>Services</strong>
-          <small>Build for reliability</small>
-        </div>
-        <div className="system-node node-ai">
-          <span className="node-symbol">✳</span>
-          <strong>Intelligence</strong>
-          <small>Automate the complex</small>
-        </div>
+        <span className="orbit-node orbit-node-one">{active.nodes[0]}</span>
+        <span className="orbit-node orbit-node-two">{active.nodes[1]}</span>
+        <span className="orbit-node orbit-node-three">{active.nodes[2]}</span>
+        <span className="orbit-node orbit-node-four">{active.nodes[3]}</span>
+        <span className="scene-coordinate coordinate-left">X: 01 / Y: 04</span>
+        <span className="scene-coordinate coordinate-right">CONCEPT MAP</span>
       </div>
-      <div className="system-bottom">
-        <span>
-          <span className="orange">●</span> BACKEND × APPLIED AI
-        </span>
-        <span>BUILT WITH INTENT</span>
+      <div className="lab-controls" role="group" aria-label="Explore engineering focus">
+        {systemModes.map((item, index) => (
+          <button key={item.name} aria-pressed={mode === index} onClick={() => setMode(index)}>
+            {item.name}
+            <span aria-hidden="true">↗</span>
+          </button>
+        ))}
+      </div>
+      <div className="lab-description" aria-live="polite">
+        <span>{active.label}</span>
+        <p>{active.description}</p>
       </div>
     </div>
   );
@@ -220,15 +257,10 @@ function WorkVisual({ kind }: { kind: string }) {
 
 export default function Portfolio() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useState(true);
   const [activeSection, setActiveSection] = useState("");
   useEffect(() => {
-    try {
-      const saved = localStorage.getItem("akash-theme");
-      const value = saved === "dark";
-      setDark(value);
-      document.documentElement.dataset.theme = value ? "dark" : "light";
-    } catch {}
+    document.documentElement.dataset.theme = "dark";
     const observer = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
@@ -268,9 +300,6 @@ export default function Portfolio() {
     const next = !dark;
     setDark(next);
     document.documentElement.dataset.theme = next ? "dark" : "light";
-    try {
-      localStorage.setItem("akash-theme", next ? "dark" : "light");
-    } catch {}
   };
   const navItems = [
     ["work", "Selected work"],
@@ -286,8 +315,12 @@ export default function Portfolio() {
       <header className="site-header">
         <div className="container nav-inner">
           <a className="wordmark" href="#home" aria-label="Akash Kumar, home">
-            akash<span>.</span>
-            <span className="wordmark-suffix"> / senior engineer</span>
+            <span className="brand-symbol" aria-hidden="true">
+              a<span>k</span>
+            </span>
+            <span className="brand-name">
+              AKASH KUMAR<span>SOFTWARE ENGINEER</span>
+            </span>
           </a>
           <nav className={menuOpen ? "main-nav open" : "main-nav"} id="main-navigation" aria-label="Main navigation">
             {navItems.map(([id, label]) => (
@@ -328,52 +361,58 @@ export default function Portfolio() {
         <section className="hero container" id="home">
           <div className="hero-copy">
             <div className="eyebrow">
-              <i className="status-dot" /> SENIOR SOFTWARE ENGINEER · BACKEND & APPLIED AI
+              <span className="eyebrow-index">01 —</span> SENIOR SOFTWARE ENGINEER
             </div>
             <h1>
-              Complex systems.
+              Engineering
               <br />
-              Simple experiences.
+              <span className="outline-text">beyond the</span>
               <br />
-              <span className="serif">Thoughtfully built.</span>
+              <span className="hero-accent">
+                interface<span className="hero-period">.</span>
+              </span>
             </h1>
             <p className="hero-intro">
-              I’m <strong>Akash Kumar</strong> — a senior software engineer turning complex problems into reliable
-              backends, seamless integrations, and practical AI.
+              I’m <strong>Akash Kumar</strong>. I build the systems behind the experience — reliable backends, seamless
+              integrations, and AI that makes itself useful.
             </p>
             <div className="hero-actions">
               <a className="button button-primary" href="#work">
-                Explore my work <Icon name="arrow" size={17} />
+                Selected work <Icon name="arrow" size={17} />
               </a>
               <a className="button button-secondary" href="#experience">
-                Explore experience <Icon name="arrow" size={17} />
+                The experience <Icon name="arrow" size={17} />
               </a>
             </div>
             <div className="hero-note">
-              <span className="mini-monogram">ak.</span>
+              <span className="status-dot" />
               <span>
                 Currently building at <strong>Fleetx</strong>
-                <br />
-                <span className="muted">Previously Celigo & Optum</span>
+                <span className="hero-note-divider">/</span>
+                <span className="muted">Ex Celigo & Optum</span>
               </span>
             </div>
           </div>
           <SystemDiagram />
           <div className="hero-bottom">
-            <span>RELIABLE BY DESIGN. CURIOUS BY DEFAULT.</span>
+            <div className="hero-disciplines">
+              <span>BACKEND SYSTEMS</span>
+              <span>REAL-TIME INTEGRATIONS</span>
+              <span>APPLIED AI</span>
+            </div>
             <a href="#impact">
-              A little further down <span>↓</span>
+              SCROLL TO EXPLORE <span>↓</span>
             </a>
           </div>
         </section>
         <section className="impact-section" id="impact" aria-label="Career highlights">
           <div className="container impact-grid">
             <div className="impact-heading">
-              <span className="eyebrow">LESS BUZZ. MORE IMPACT.</span>
+              <span className="eyebrow">THE WORK, IN NUMBERS</span>
               <p>
-                Engineering that
+                Built with intent.
                 <br />
-                makes a difference.
+                <span>Measured in impact.</span>
               </p>
             </div>
             <div className="impact-item">
@@ -402,11 +441,11 @@ export default function Portfolio() {
         <section className="section container" id="work">
           <div className="section-top">
             <div>
-              <span className="eyebrow section-number">01 / SELECTED WORK</span>
+              <span className="eyebrow section-number">02 / SELECTED WORK</span>
               <h2>
-                Built to solve
+                Complex problems.
                 <br />
-                <span className="serif">real problems.</span>
+                <span className="muted-heading">Considered solutions.</span>
               </h2>
             </div>
             <p className="section-intro">
@@ -414,8 +453,12 @@ export default function Portfolio() {
             </p>
           </div>
           <div className="featured-grid">
-            {caseStudies.map(work => (
-              <article className="work-card" key={work.title}>
+            {caseStudies.map((work, index) => (
+              <article className={`work-card work-card-${work.kind}`} key={work.title}>
+                <div className="work-index" aria-hidden="true">
+                  0{index + 1}
+                  <span> / PROJECT</span>
+                </div>
                 <WorkVisual kind={work.kind} />
                 <div className="work-body">
                   <div className="work-meta">
@@ -436,7 +479,7 @@ export default function Portfolio() {
                   </div>
                   <details className="case-details">
                     <summary>
-                      Explore the engineering <span>+</span>
+                      Read the case study <span>↗</span>
                     </summary>
                     <div className="case-content">
                       <h4>The challenge</h4>
@@ -456,7 +499,11 @@ export default function Portfolio() {
             ))}
           </div>
           <div className="side-projects-heading">
-            <h3>Outside the day job</h3>
+            <div>
+              <span className="eyebrow">THE PLAYGROUND</span>
+              <h3>Curiosity ships, too.</h3>
+            </div>
+            <p>Personal projects. Real learning.</p>
           </div>
           <div className="project-grid">
             {projects.map((project, i) => (
@@ -484,25 +531,32 @@ export default function Portfolio() {
         <section className="experience-section" id="experience">
           <div className="container experience-layout">
             <div className="experience-heading">
-              <span className="eyebrow section-number">02 / THE JOURNEY</span>
+              <span className="eyebrow section-number">03 / THE JOURNEY</span>
               <h2>
-                Experience.
+                Good systems.
                 <br />
-                <span className="serif">With purpose.</span>
+                <span className="muted-heading">Great teams.</span>
               </h2>
               <p>Building across logistics, enterprise integration, and healthcare.</p>
             </div>
             <div className="timeline">
               {career.map((job, i) => (
-                <article className="career-entry" key={job.company}>
-                  <div className={`company-icon company-${i}`}>{job.monogram}</div>
+                <details className="career-entry" key={job.company} open={i === 0}>
+                  <summary>
+                    <span className={`company-icon company-${i}`}>{job.monogram}</span>
+                    <span className="career-heading">
+                      <span className="career-meta">
+                        {job.dates}
+                        {i === 0 && <span className="current-badge">CURRENT</span>}
+                      </span>
+                      <span className="career-company">{job.company}</span>
+                      <span className="career-role">{job.role}</span>
+                    </span>
+                    <span className="career-expand" aria-hidden="true">
+                      +
+                    </span>
+                  </summary>
                   <div className="career-content">
-                    <div className="career-meta">
-                      <span>{job.dates}</span>
-                      {i === 0 && <span className="current-badge">CURRENT</span>}
-                    </div>
-                    <h3>{job.company}</h3>
-                    <p className="career-role">{job.role}</p>
                     <ul>
                       {job.points.map(point => (
                         <li key={point}>{point}</li>
@@ -510,7 +564,7 @@ export default function Portfolio() {
                     </ul>
                     <div className="career-tech">{job.stack}</div>
                   </div>
-                </article>
+                </details>
               ))}
             </div>
           </div>
@@ -518,11 +572,11 @@ export default function Portfolio() {
         <section className="section container" id="expertise">
           <div className="section-top">
             <div>
-              <span className="eyebrow section-number">03 / THE TOOLKIT</span>
+              <span className="eyebrow section-number">04 / THE TOOLKIT</span>
               <h2>
-                The right tools.
+                Built on strong
                 <br />
-                <span className="serif">The right foundations.</span>
+                <span className="muted-heading">foundations.</span>
               </h2>
             </div>
             <p className="section-intro">
@@ -532,7 +586,12 @@ export default function Portfolio() {
           <div className="skills-grid">
             {skillGroups.map((group, i) => (
               <article className="skill-group" key={group.title}>
-                <span className="skill-index">0{i + 1} /</span>
+                <div className="skill-topline">
+                  <span className="skill-index">0{i + 1} /</span>
+                  <span className="skill-symbol" aria-hidden="true">
+                    {["{ }", "▤", "✳"][i]}
+                  </span>
+                </div>
                 <h3>{group.title}</h3>
                 <p>{group.description}</p>
                 <div className="tags">
@@ -547,21 +606,34 @@ export default function Portfolio() {
         <section className="about-section" id="about">
           <div className="container about-layout">
             <div className="about-art" aria-hidden="true">
-              <span className="about-art-label">THE PERSON BEHIND THE CODE</span>
+              <div className="about-art-top">
+                <span>THE HUMAN IN THE LOOP</span>
+                <span>↗</span>
+              </div>
               <div className="monogram-art">
                 ak<span>.</span>
               </div>
+              <div className="mindset-card">
+                <span className="code-comment">// the way I work</span>
+                <p>
+                  <span>curiosity</span> → understanding
+                  <br />
+                  <span>ownership</span> → execution
+                  <br />
+                  <span>craft</span> → better systems
+                </p>
+              </div>
               <div className="about-art-footer">
-                <span>ALWAYS A STUDENT.</span>
-                <span>↗</span>
+                <span>ALWAYS BUILDING. ALWAYS LEARNING.</span>
+                <span>01 / ∞</span>
               </div>
             </div>
             <div className="about-copy">
-              <span className="eyebrow section-number">04 / A LITTLE ABOUT ME</span>
+              <span className="eyebrow section-number">05 / BEHIND THE BUILD</span>
               <h2>
-                Engineer by trade.
+                A curious mind.
                 <br />
-                <span className="serif">Problem solver at heart.</span>
+                <span className="muted-heading">An engineer’s instinct.</span>
               </h2>
               <p>
                 I’m Akash, a senior software engineer focused on backend systems. I enjoy the work behind the interface:
@@ -585,6 +657,17 @@ export default function Portfolio() {
         </section>
       </main>
       <footer className="site-footer">
+        <div className="container footer-statement">
+          <span className="eyebrow">RELIABLE BY DESIGN. CURIOUS BY DEFAULT.</span>
+          <p>
+            Make it work.
+            <br />
+            <span>Make it matter.</span>
+            <a href="#work" aria-label="Explore selected work">
+              <Icon name="arrow" size={44} />
+            </a>
+          </p>
+        </div>
         <div className="container footer-inner">
           <a className="wordmark" href="#home">
             akash<span>.</span>
